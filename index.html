@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>صدقة جارية للحاج عبد الله محسن</title>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    .container {
+      background-color: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 2rem;
+    }
+    
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #bbf7d0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #15803d;
+      margin-bottom: 1rem;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #374151;
+      margin-bottom: 1.5rem;
+    }
+    
+    .duaa {
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      color: #065f46;
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    /* Tasbih Grid Section */
+    h2 {
+      color: #15803d;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      padding: 0 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    
+    .tasbih-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      border: 2px solid #fef9c3;
+    }
+    
+    .tasbih-card:hover {
+      transform: scale(1.03);
+    }
+    
+    .count-circle {
+      background-color: #fef3c7;
+      color: #92400e;
+      font-weight: bold;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    
+    .zekr-text {
+      font-size: 0.9rem;
+      color: #1e293b;
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.4;
+    }
+    
+    .reset-btn {
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .reset-btn:hover {
+      background-color: #dc2626;
+    }
+    
+    @media (max-width: 480px) {
+      .title {
+        font-size: 1.5rem;
+      }
+    
+      .subtitle {
+        font-size: 1rem;
+      }
+    
+      .duaa {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+      }
+    
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 0.75rem;
+        padding: 0.5rem;
+      }
+    
+      .tasbih-card {
+        padding: 0.75rem;
+      }
+    
+      .count-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+      }
+    
+      .zekr-text {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="../absallah.jpeg" alt="صورة الحاج عبد الله محسن" class="profile-img">
+    <div class="title">صدقة جارية</div>
+    <div class="subtitle">إلى روح الحاج عبد الله محسن</div>
+    <div class="duaa">
+      اللهم اغفر للحاج عبد الله محسن<br>
+      اللهم اجعل قبره روضة من رياض الجنة<br>
+      اللهم أنزله منزلاً مباركًا، وأنت خير المنزلين<br>
+      اللهم اغسله بالماء والثلج والبرد<br>
+      ونقه من الذنوب والخطايا كما ينقى الثوب الأبيض من الدنس<br>
+      اللهم اجعل هذه الصدقة شفيعة له يوم القيامة<br>
+      اللهم اجعل كل حرف من القرآن يُتلى في ميزان حسناته<br>
+      اللهم ارحمه رحمةً واسعة، واغفر له، وارفع درجته في عليين<br>
+      استغفر الله العظيم الذي لا إله إلا هو الحي القيوم وأتوب إليه<br>
+      استغفر الله، استغفر الله، استغفر الله
+    </div>
+    
+    <!-- Tasbih Grid Section تحت الدعاء -->
+    <h2>ابدأ بالتسبيح</h2>
+    <div class="grid" id="tasbihGrid"></div>
+    <button class="reset-btn" onclick="resetAllCards()">تصفير جميع العدادات</button>
+  </div>
+  
+  <script>
+    // مصفوفة الأذكار للتسبيح
+    const azkar = [
+      "اللهم ارحمه", "اللهم اغفر له", "اللهم ارفع درجاته", "اللهم اعفُ عنه",
+      "سبحان الله", "الحمد لله", "الله أكبر", "أستغفر الله",
+      "سبحان الله العظيم", "سبحان الله وبحمده", "لا إله إلا الله", "لا حول ولا قوة إلا بالله"
+    ];
+    
+    const tasbihGrid = document.getElementById('tasbihGrid');
+    
+    // إنشاء بطاقات التسبيح ديناميكيًا
+    azkar.forEach((zekr, index) => {
+      const card = document.createElement('div');
+      card.className = 'tasbih-card';
+      card.dataset.count = 0;
+      card.dataset.max = 33;
+    
+      card.innerHTML = `
+        <div class="count-circle" id="count-${index}">0 / 33</div>
+        <div class="zekr-text">${zekr}</div>
+      `;
+    
+      card.addEventListener('click', () => {
+        let count = parseInt(card.dataset.count);
+        const max = parseInt(card.dataset.max);
+        if (count < max) {
+          count++;
+          card.dataset.count = count;
+          document.getElementById(`count-${index}`).textContent = `${count} / ${max}`;
+        }
+      });
+    
+      tasbihGrid.appendChild(card);
+    });
+    
+    // دالة إعادة تصفير جميع بطاقات التسبيح
+    function resetAllCards() {
+      const cards = document.querySelectorAll('.tasbih-card');
+      cards.forEach((card, index) => {
+        card.dataset.count = 0;
+        document.getElementById(`count-${index}`).textContent = `0 / ${card.dataset.max}`;
+      });
+    }
+  </script>
+</body>
+</html>
